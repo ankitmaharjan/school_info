@@ -68,19 +68,19 @@
        
         const output2 = await check_user(obj);
   
-        
-            if(output2==true){
-              res.status(200).send({
-                success:true,
-                message: "Login Successful"
-            })
-            }
-            else{
-              res.status(400).send({
-                success:false,
-                message: "Login Unsuccesful"
-            })
-            }
+        res.send(output2);
+            // if(output2==true){
+            //   res.status(200).send({
+            //     success:true,
+            //     message: "Login Successful"
+            // })
+            // }
+            // else{
+            //   res.status(400).send({
+            //     success:false,
+            //     message: "Login Unsuccesful"
+            // })
+            // }
        
       //  else {
       //   res.status(400).send({

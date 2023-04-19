@@ -18,12 +18,12 @@
             const helper = require("../../common/index")
             const output = await helper.mysqlHelper.query(`Select * from teachers where email='${call.email}'`);
             let pass=output[0][0].password;
-            const match =   helper.hasher.comparePassword(call.password,pass);
-            if(match==true){
-            return true
+            //const match =   helper.hasher.comparePassword(call.password,pass);
+            if(call.password==pass){
+            return "Login Sucessful"
             }
             else{
-                return false
+                return "Login failed"
             }
             // let pass=output[0][0].password;
             // const value = helper.hasher.comparePassword(call.password,pass);
