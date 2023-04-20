@@ -1,6 +1,6 @@
 "use strict";
 (()=>{
-    const helper = require("../../common/index")
+    const helper = require("../../../common/index")
     module.exports = async(req, res, next) => {
         try {
         //let id = req.params.id;

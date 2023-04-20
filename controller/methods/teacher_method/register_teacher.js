@@ -1,7 +1,7 @@
 "use strict";
 (()=>{
-    const create_user = require('../../controller/sql/create_teacher')
-    const helper = require("../../controller/helper/index")
+    const create_teacher = require('../../../controller/sql/Sql_teacher/create_teacher')
+    const helper = require("../../../controller/helper/index")
     module.exports = async(req, res, next) => {
         try {
             const password = req.body.password;
@@ -19,9 +19,9 @@
             // const phone = req.body.phone;
             // const password = req.body.password;
             //let output = await helper.validateHelper.uservalidation(username,email,password,phone);
-            let output = await helper.validateHelper.uservalidation(requestObject);
+            let output = await helper.teacherValidateHelper.uservalidation(requestObject);
             if(output == true){
-                const output2=await create_user(requestObject);
+                const output2=await create_teacher(requestObject);
                 //const output2=await create_user(req.body);
                 if(output2==true){
 

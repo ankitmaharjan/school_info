@@ -2,13 +2,13 @@
 (() => {
     const express = require("express");
     const router = express.Router();
-    const create_teacher = require("../controller/methods/register_teacher")
-    const read_teacher = require("../controller/methods/read_record");
-    const delete_teacher = require("../controller/methods/delete_record");
-    const search_teacher = require("../controller/methods/read_singleRecord");
-    const update_teacher = require("../controller/methods/update_record");
-    const select_teacher = require("../controller/methods/read_data");
-    const login_teacher = require("../controller/methods/login");
+    const create_teacher = require("../controller/methods/teacher_method/register_teacher")
+    const read_all_teacher = require("../controller/methods/teacher_method/read_Allteacher");
+    const delete_teacher = require("../controller/methods/teacher_method/delete_teacher");
+    const search_teacher = require("../controller/methods/teacher_method/read_singleTeacher");
+    const update_teacher = require("../controller/methods/teacher_method/update_teacher");
+    const select_teacher = require("../controller/methods/teacher_method/read_teacher");
+    const login_teacher = require("../controller/methods/teacher_method/login_teacher");
 
     const create_student = require("../controller/methods/student_method/create_student");
     const get_all_student = require("../controller/methods/student_method/select_student")
@@ -20,13 +20,12 @@
     
     
     router.post('/sign-up',create_teacher);
-    router.get('/get-all-record_teacher',read_data);
-    router.get('/read-single_teacher/:uuid',search_data);
-    router.get('/select_data_teacher',select_data);
-    //router.delete('/delete-record/:id',delete_data);
-    router.put('/delete-record-teacher/:uuid',delete_data);
-    router.put('/update-record-teacher/:uuid',update_record);
-    router.post('/login_teacher',loginController);
+    router.get('/get_all_record_teacher',read_all_teacher);
+    router.put('/delete_record_teacher/:uuid',delete_teacher);
+    router.get('/read-single_teacher/:uuid',search_teacher);
+    router.put('/update_record_teacher/:uuid',update_teacher);
+    router.get('/select_data_teacher',select_teacher);
+    router.post('/login_teacher',login_teacher);
 
     router.post('/create_student', create_student);
     router.get('/select_student',get_all_student);

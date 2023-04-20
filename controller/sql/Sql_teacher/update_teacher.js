@@ -2,7 +2,7 @@
 (()=>{
     module.exports=async(call)=>{
       try {
-        const helper = require("../../common/index")
+        const helper = require("../../../common/index")
         let myDate = new Date().getTime();
         //const output=await helper.mysqlHelper.query("Select * from students where id="+search);
         // let sqlQuery = `Update teachers set is_delete=1 WHERE uuid='${uuid}'`; 

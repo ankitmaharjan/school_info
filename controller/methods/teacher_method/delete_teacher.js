@@ -1,7 +1,7 @@
 "use strict";
 //Soft Delete Operation
 (()=>{
-    const soft_delete = require("../../controller/sql/soft_delete")
+    const soft_delete = require("../../../controller/sql/Sql_teacher/soft_delete_teacher")
     module.exports = async(req, res, next) => {
         try {
         //let id = req.params.id;
