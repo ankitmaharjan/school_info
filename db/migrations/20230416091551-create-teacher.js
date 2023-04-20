@@ -29,6 +29,14 @@ module.exports = {
         
         type: Sequelize.BIGINT(50)
       },
+      uuid:{
+        type: Sequelize.STRING
+      },
+      is_delete: {
+        defaultValue: 0,
+        type: Sequelize.TINYINT
+      },
+
      
     });
   },
