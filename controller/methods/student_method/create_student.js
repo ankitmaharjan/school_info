@@ -1,7 +1,7 @@
 "use strict";
 (() => {
-  const create_user = require("../sql/insert_student");
-  const validationHelper = require("../../common/index");
+  const create_user = require("../../sql/Sql_student/insert_student");
+  const validationHelper = require("../../../common/index");
   module.exports = async (req, res, next) => {
     try {
       const requestObject = {
@@ -11,7 +11,7 @@
         Password: btoa(req.body.Password),
       };
 
-      const valdidator = await validationHelper.validationHelper.uservalidation(
+      const valdidator = await validationHelper.studentvalidateHelper.uservalidation(
         requestObject
       );
       if (valdidator == true) {
