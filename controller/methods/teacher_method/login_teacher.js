@@ -54,8 +54,8 @@
 // module.exports = loginController;
 
 (() => {
-  const check_user = require("./../sql/login_teacher")
-  const helper = require("../helper/index")
+  const check_user = require("./../../sql/Sql_teacher/login_teacher")
+  const helper = require("../../helper/index")
   module.exports = async(req, res, next) => {
     try {
       const obj = {
@@ -64,7 +64,7 @@
       }
      
    
-   //   let output = await helper.validateHelper.uservalidation(obj);
+    //  let output = await helper.teacherValidateHelper.uservalidation(obj);
        
         const output2 = await check_user(obj);
   

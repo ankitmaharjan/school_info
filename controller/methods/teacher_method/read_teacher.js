@@ -1,6 +1,6 @@
 "use strict";
 (()=>{
-    const select_teacher = require('../sql/select_teacher')
+    const select_teacher = require('../../sql/Sql_teacher/select_teacher')
     module.exports = async(req, res, next) => {
         try {
             const output2=await select_teacher();

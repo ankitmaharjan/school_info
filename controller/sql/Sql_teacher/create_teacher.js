@@ -1,5 +1,5 @@
 "use strict";
-const helper = require("../../common/index");
+const helper = require("../../../common/index");
 (()=>{
     // module.exports=async(username,email,password,phone)=>{
         module.exports=async(call)=>{

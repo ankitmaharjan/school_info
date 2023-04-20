@@ -2,7 +2,7 @@
 (() => {
     module.exports = {
         mysqlHelper: require("../../common/mysqlHelper"),
-        validateHelper: require("../helper/validationHelper"),
+        teacherValidateHelper: require("../helper/teacher_validationHelper"),
         hasher: require("../helper/hasher")
     }
 })()

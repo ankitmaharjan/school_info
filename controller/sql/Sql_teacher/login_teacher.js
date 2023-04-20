@@ -15,7 +15,7 @@
 (()=>{
     module.exports=async(call)=>{
         try {
-            const helper = require("../../common/index")
+            const helper = require("../../../common/index")
             const output = await helper.mysqlHelper.query(`Select * from teachers where email='${call.email}'`);
             let pass=output[0][0].password;
             //const match =   helper.hasher.comparePassword(call.password,pass);

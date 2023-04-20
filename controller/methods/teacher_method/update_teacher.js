@@ -1,7 +1,7 @@
 "use strict";
 (()=>{
    // const helper = require("../../common/index")
-   const updated_teacher = require("../../controller/sql/update_data")
+   const updated_teacher = require("../../../controller/sql/Sql_teacher/update_teacher")
     module.exports = async(req, res, next) => {
         try {
          

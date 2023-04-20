@@ -3,6 +3,6 @@
     module.exports = {
         mysqlHelper: require("./mysqlHelper"),
         hasher: require("./../controller/helper/hasher"),
-        validateHelper: require("./../controller/helper/validationHelper")
+        teacherValidateHelper: require("./../controller/helper/teacher_validationHelper")
     }
 })()
