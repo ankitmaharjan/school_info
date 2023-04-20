@@ -4,6 +4,7 @@ created at timestamp   done
 soft_delete   done
 validation trim not needed
 reference templete   meaning   ` `  '${call.email}'    /   \   done
+\ yo chij password ma dina paudaina
 
 ??? yeskoi concept ni bujnu xaaa
 
