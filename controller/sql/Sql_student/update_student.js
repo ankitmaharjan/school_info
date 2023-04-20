@@ -10,7 +10,7 @@
 //const { uuidv4 } = require("sequelize");
 "use strict";
 (()=>{
-    const helper = require("../../common/index")
+    const helper = require("../../../common/index")
     const date  = new Date().getTime()
     module.exports = async(call) => {
        // uuid='${uuidv4()}',

@@ -1,6 +1,6 @@
 "use strict";
 (()=>{
-    const update_student = require('../sql/update')
+    const update_student = require('../../sql/Sql_student/update_student')
     module.exports = async(req, res, next) => {
         try {
             const obj ={

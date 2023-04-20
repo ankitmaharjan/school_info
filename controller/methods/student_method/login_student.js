@@ -1,5 +1,5 @@
 (() => {
-    const check_user = require("./../sql/check_user")
+    const check_user = require("../../sql/Sql_student/check_student")
 
     module.exports = async(req, res, next) => {
         try {

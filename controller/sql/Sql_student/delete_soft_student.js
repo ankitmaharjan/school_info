@@ -1,7 +1,7 @@
 "use strict";
 //soft delete
 (()=>{
-    const helper = require("../../common/index")
+    const helper = require("../../../common/index")
     module.exports = async(req, res, next) => {
        try {
         let sqlQuery = `Update students set is_delete=1 WHERE uuid='${req.uuid}'`; //flag ko concept 1 or 0
