@@ -4,10 +4,15 @@
     module.exports = async(req, res, next) => {
         try {
             const output2=await delete_student(req.params);
-            
-            res.status(200).send(output2);
-            res.send("delete Succesful");
-
+            if(output2 == true){
+                
+                res.status(200).send("delete Succesful");
+    
+            }
+            else{
+                res.status(400).send("deleted unsuccess");
+            }
+           
             
         } catch (error) {
             console.log(error)

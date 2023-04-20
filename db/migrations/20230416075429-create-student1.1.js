@@ -9,6 +9,9 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      uuid:{
+        type: Sequelize.STRING
+      },
       firstName: {
         type: Sequelize.STRING
       },
@@ -23,9 +26,18 @@ module.exports = {
         type: Sequelize.BIGINT(50)
       },
       updatedAt: {
-        allowNull: false,
+      
         type: Sequelize.BIGINT(50)
+      },
+      is_delete:{
+        defaultValue: 0,
+        type: Sequelize.TINYINT
+      },
+      Password:{
+        type: Sequelize.STRING
       }
+      
+      
     });
   },
   async down(queryInterface, Sequelize) {

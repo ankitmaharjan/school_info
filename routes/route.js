@@ -19,7 +19,7 @@
 
     
     
-    router.post('/sign-up',create_teacher);
+    router.post('/create_teacher',create_teacher);
     router.get('/get_all_record_teacher',read_all_teacher);
     router.put('/delete_record_teacher/:uuid',delete_teacher);
     router.get('/read-single_teacher/:uuid',search_teacher);
