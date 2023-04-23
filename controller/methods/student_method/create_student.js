@@ -5,7 +5,7 @@
   module.exports = async (req, res, next) => {
     try {
       const requestObject = {
-        firstName: req.body.firstName,
+        firstName: req.body.firstName, 
         lastName: req.body.lastName,
         email: req.body.email,
         Password: btoa(req.body.Password),

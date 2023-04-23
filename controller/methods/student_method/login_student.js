@@ -8,14 +8,25 @@
                 Password: req.body.Password,
               };
                 const response=await check_user(requestObject2);
-                   if(response===true){
-                    res.status(200).send("login sucessful");
-                   }
-                   else{
-                    res.status(400).send("login unsucessful")
-                   }
+            if(response!=="login failed"){
+                res.status(200).send({
+                    Message:"Login Success",
+                    token: response
+                  });
+
+            }else{
+                res.status(200).send({
+                    Message:"login Unsuccessful",
+                    
+                })
+            }
+            
+                //    if(response===true){
+                //     res.status(200).send("login sucessful");
+                //    }
+
         } catch (error) {
-            console.log(error)
+           console.log(error)
         }
 
     };
