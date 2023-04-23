@@ -1,8 +1,9 @@
+sir le pathako file : 03 Analyzing Performance of Arrays and Objects  done
 GRPC  done
 service oriented architecture done
 functional programming    done
+monolitch done
+event driven architecture  done
 
-event driven architecture   baki xa
-monolitch   baki xa
-micro service    baki xa
-sir le pathako file : 03 Analyzing Performance of Arrays and Objects  baki xa
+micro service    done
+
