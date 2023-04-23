@@ -55,7 +55,7 @@
 
 (() => {
   const check_user = require("./../../sql/Sql_teacher/login_teacher")
-  const helper = require("../../helper/index")
+  
   module.exports = async(req, res, next) => {
     try {
       const obj = {
@@ -68,7 +68,11 @@
        
         const output2 = await check_user(obj);
   
-        res.send(output2);
+        res.status(200).send({
+          Message:"Login Success",
+          token: output2
+        });
+
             // if(output2==true){
             //   res.status(200).send({
             //     success:true,

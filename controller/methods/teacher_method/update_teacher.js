@@ -11,7 +11,6 @@
     //     message: "The updated teacher is:",
     //     data: result
     //    })
-    
     const obj ={
         username:req.body.username,
         email:req.body.email,

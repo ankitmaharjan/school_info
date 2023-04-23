@@ -16,11 +16,24 @@
     module.exports=async(call)=>{
         try {
             const helper = require("../../../common/index")
+            const JWT = require("jsonwebtoken");
             const output = await helper.mysqlHelper.query(`Select * from teachers where email='${call.email}'`);
             let pass=output[0][0].password;
-            //const match =   helper.hasher.comparePassword(call.password,pass);
+            // const match =   helper.hasher.comparePassword(call.password,pass);
+            // if(!match){
+            //     return "login Failed"
+            // }
+            // else{
+            //     return "Login True"
+            // }
             if(call.password==pass){
-            return "Login Sucessful"
+                  //Creating token
+              const token = await JWT.sign({ id: call.id }, process.env.JWT_SECRET, {
+                expiresIn: "14d",
+                     });
+
+                     return token;
+                    
             }
             else{
                 return "Login failed"
