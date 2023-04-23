@@ -1,4 +1,7 @@
 "use strict";
+
+const { token } = require("morgan");
+
 // const helper = require("../../controller/helper/index");
 // const login_data = require("../../controller/sql/login_teacher") 
 //   //POST LOGIN
@@ -67,12 +70,19 @@
     //  let output = await helper.teacherValidateHelper.uservalidation(obj);
        
         const output2 = await check_user(obj);
-  
+        if(output2!=="Login failed"){
         res.status(200).send({
-          Message:"Login Success",
+         Message:"Login Success",
           token: output2
         });
-
+      }else{
+        res.status(401).send({
+          Message:"Login Unsucess",
+          
+         });
+      }
+      
+    
             // if(output2==true){
             //   res.status(200).send({
             //     success:true,

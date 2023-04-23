@@ -28,11 +28,11 @@
             // }
             if(call.password==pass){
                   //Creating token
-              const token = await JWT.sign({ id: call.id }, process.env.JWT_SECRET, {
+              const token = await JWT.sign({}, process.env.JWT_SECRET, {
                 expiresIn: "14d",
                      });
-
-                     return token;
+                       return token;
+                     
                     
             }
             else{
