@@ -15,7 +15,7 @@
                  author_id: req.body.author_id,
               };
             
-            let output = await helper.bookValidationHelper.uservalidation(requestObject);
+            let output = await helper.bookValidationHelper.bookValidation(requestObject);
             if(output == true){
                 const output2=await insert_book(requestObject);
             
