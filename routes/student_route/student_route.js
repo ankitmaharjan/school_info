@@ -14,9 +14,6 @@
 
 
    
- 
-
-
 
     router.post('/create_student', create_student);
     router.get('/select_student',get_all_student);
