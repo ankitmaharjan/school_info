@@ -26,7 +26,6 @@ const requireStudent = async (req, res, next) => {
 const isStudent = async (req, res, next) => {
   try {
     const uuid = req.params.uuid;
-    //const teacher = await helper.mysqlHelper.query(`Select * from teachers where uuid='${uuid}'`);
     const student = await helper.mysqlHelper.query(`Select * from students where uuid='${uuid}'`);
     const auth = student[0][0].role;
     if (auth !== 0) {
