@@ -25,3 +25,19 @@ encode decode base 64 convert to string done
 use strict  done
 
 same database merge main branch
+
+
+
+
+
+
+
+//yow inner join ko in book and author table
+SELECT authors.author_name as auth_name, authors.address, books.book_name 
+from authors
+inner join books on authors.book_id = books.id; yow inner join ko
+
+//extra publisher
+SELECT authors.author_name as auth_name, authors.address, books.book_name,books.publisher
+from authors
+inner join books on authors.book_id = books.id;
