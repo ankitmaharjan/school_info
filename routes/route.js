@@ -17,9 +17,6 @@
     router.use("/book",book_route);
     router.use("/author",author_route)
 
-    // router.use("/",(req,res,next)=>
-    // {
-    //    res.status(200).send("Hello world")
-    // })
+   
     module.exports = router;
 })()
