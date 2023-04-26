@@ -1,0 +1,139 @@
+"use strict";
+(()=>{
+    module.exports=async()=>{
+      try {
+
+        // const sqlString = require("sqlString");
+        const helper = require("../../../common/index")
+        //const output=await helper.mysqlHelper.query("Select * from students where id="+search);
+       const output=await helper.mysqlHelper.query(`
+       
+       SELECT 
+    a.author_name,
+    a.address,
+    b.book_name,
+    b.publisher,
+    CONCAT(s.firstName, " ", s.lastName) AS fullname,
+    t.username,
+    t.phone
+FROM
+    books as b
+	 INNER JOIN
+    students AS s ON b.student_id=s.id
+        INNER JOIN
+    teachers AS t ON b.teacher_id=t.id
+INNER JOIN
+authors as a ON b.author_id=a.id
+       `);
+
+
+       let baseQuery = `SELECT 
+       a.author_name,
+       a.address,
+       b.book_name,
+       b.publisher,
+       CONCAT(s.firstName, s.lastName) AS fullname,
+       t.username,
+       t.phone
+   FROM
+       books as b
+      INNER JOIN
+       students AS s ON b.student_id=s.id
+           INNER JOIN
+       teachers AS t ON b.teacher_id=t.id
+   INNER JOIN
+   authors as a ON b.author_id=a.id
+   
+   where 1=1
+   `
+
+
+  //  let formatedQUery = sqlString.format(baseQuery);
+
+
+  const [mainQuery]=await helper.mysqlHelper.query(baseQuery) // destructuring  array
+  const {mainQuery}=await helper.mysqlHelper.query(baseQuery)  object
+
+
+  let filterQuery =` AND  where phone= ${mainQuery.filter.phone} `
+
+
+  mainQuery= baseQuery+filterQuery
+
+
+  console.log(mainQuery);
+       
+
+
+
+
+
+
+        return output;
+    }
+       catch (error) {
+        console.log(error)
+      }
+    };    
+})();
+
+
+
+SELECT 
+    a.author_name,
+    a.address,
+    b.book_name,
+    b.publisher,
+    CONCAT(s.firstName," ", s.lastName) AS fullname,
+    t.username,
+    t.phone
+FROM
+    books as b
+	 INNER JOIN
+    students AS s ON b.student_id=s.id
+        INNER JOIN
+    teachers AS t ON b.teacher_id=t.id
+INNER JOIN
+authors as a ON b.author_id=a.id
+
+where t.phone=9840800724 
+
+
+SELECT 
+    b.book_name AS book_title,
+    b.price,
+    t.username AS teacher_name,
+    CONCAT(s.firstName, ' ', s.lastName) AS Student_full_Name,
+    a.author_name
+FROM
+    books AS b
+        INNER JOIN
+    teachers AS t ON b.teacher_id = t.id
+        INNER JOIN
+    students AS s ON b.student_id = s.id
+        INNER JOIN
+    authors AS a ON b.author_id = a.id
+    
+    where 1=1
+    HAVING b.price=250;   //having only used for when there are no column 
+
+//rest spread
+
+npm vs npx   done
+mysql case  done
+mysql timestamp created at   done
+test(regex) timecomplexity   done
+map, filter, rest spread   done
+ // const sqlString = require("sqlString");      done
+  //  let formatedQUery = sqlString.format(baseQuery);    done
+
+
+  const [mainQuery]=await helper.mysqlHelper.query(baseQuery) // destructuring  donee
+.env milaune by creating new copy .env file jun local .env file ho   done
+git ma gara tei delete ni gardine .env file original   done
+then push garda merge conflict audaina   done
+
+
+mysql and noSQL   done
+select id nai garne join sab get_all_record_teacher
+then filter/map garera id lai.. response ma chai name haru show garne

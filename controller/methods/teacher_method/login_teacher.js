@@ -1,7 +1,5 @@
 "use strict";
 
-const { token } = require("morgan");
-
 // const helper = require("../../controller/helper/index");
 // const login_data = require("../../controller/sql/login_teacher") 
 //   //POST LOGIN
