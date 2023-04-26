@@ -5,7 +5,7 @@
     
     const create_author = require("../../controller/methods/Author_method/create_Author");
    
-    router.post('/create_book', create_author);
+    router.post('/Insert_author', create_author);
 
 
 
