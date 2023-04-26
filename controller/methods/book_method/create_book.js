@@ -15,7 +15,10 @@
                  author_id: req.body.author_id,
               };
             
+<<<<<<< HEAD
           
+=======
+>>>>>>> 825c46ea4bca0fc08035aa86c0e2042eec889a63
            
                 const output2=await insert_book(requestObject);
             
@@ -34,8 +37,12 @@
                     })
                 
                 }
+<<<<<<< HEAD
                 
                      
+=======
+                    
+>>>>>>> 825c46ea4bca0fc08035aa86c0e2042eec889a63
                 
         } catch (error) {
             res.status(500).send({
