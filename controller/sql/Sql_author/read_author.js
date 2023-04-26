@@ -2,7 +2,7 @@
 (() => {
   module.exports = async (req) => {
     try {
-      const sqlString = require("sqlString");
+      const sqlString = require("sqlstring");
       const helper = require("../../../common/index");
       //const output=await helper.mysqlHelper.query("Select * from students where id="+search);
 
