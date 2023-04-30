@@ -87,6 +87,7 @@
       let baseQuery = `SELECT
       a.author_name,
       a.address,
+      a.createdAt,
       b.book_name,
       b.publisher,
       b.price,
@@ -112,6 +113,11 @@
         let filterQuery = ` where 1=1 and s.id= ${req.filter.id}`;
         baseQuery += filterQuery;
       }
+
+      if (req.filter.phone) {  //filter by phone
+        let filterQuery = ` where 1=1 and a.phone= ${req.filter.phone}`;
+        baseQuery += filterQuery;
+      }
       // if (req.filter.uuid) {  //filter by uuid
       //   let filterQuery = ` where 1=1 and b.uuid= ${req.filter.uuid}`
       //   baseQuery += filterQuery;
@@ -119,7 +125,10 @@
 
       let formatedQUery = sqlString.format(baseQuery);
       const [output] = await helper.mysqlHelper.query(formatedQUery); //destructuring
-      
+     // console.log(output)
+      //const myString = DateTimeToStr(UnixToDateTime(output)); 
+      // const vv= new Date( output[0].createdAt.endDate)
+      // return vv;
       //   const [mainQuery] = await helper.mysqlHelper.query(baseQuery);
       //  const prices=(mainQuery.map((item)=>{
       //   return(
@@ -129,7 +138,25 @@
       //let filterQuery = ` AND  where a.phone= ${mainQuery.filter.phone}`;
       // mainQuery = baseQuery + filterQuery;
       //eturn filterQuery;
-      return output;
+      // const data=output.filter((item)=>{
+      //   return item.createdAt;
+
+      // })
+     // console.log(data)
+      for(const i of output){
+        console.log(i);
+      }
+      let databaseDate=output[0].createdAt;
+      function convertEpochToSpecificTimezone(timeEpoch, offset){
+        var d = new Date(timeEpoch);
+        var utc = d.getTime() + (d.getTimezoneOffset() * 60000);  
+        var nd = new Date(utc + (3600000*offset));
+        return nd.toLocaleString();
+    }
+    const dateForUser=convertEpochToSpecificTimezone(databaseDate, +3)
+    // console.log(dateForUser)
+    output[0].createdAt=dateForUser;
+   return output;
     } catch (error) {
       console.log(error);
     }
